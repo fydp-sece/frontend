@@ -60,11 +60,19 @@
 
 			<div id="clips" style="display:none">
 				<h5>Original:</h5>
-				<audio id="original" src="Russian Roulette.mp3" controls>
+				<audio id="original" src="http://ernest-wong.me/audio/mixed/noise1_voice1.wav" controls>
 				  Your browser does not support the <code>audio</code> element.
 				</audio>
-				<h5>Processed:</h5>
-				<audio id="processed" src="http://ernest-wong.me/midterm-demo-filtered.mp3" controls>
+				<h5>Processed using SOX:</h5>
+				<audio id="processed" src="http://ernest-wong.me/audio/clean/noise1_voice1_cleaned.wav" controls>
+				  Your browser does not support the <code>audio</code> element.
+				</audio>
+        <h5>Processed using NMF:</h5>
+				<audio id="processed2" src="http://ernest-wong.me/audio/wav/timit_denoising_mixture_DENOISED.wav" controls>
+				  Your browser does not support the <code>audio</code> element.
+				</audio>
+        <h5>Processed using DRNN:</h5>
+				<audio id="processed3" src="http://ernest-wong.me/audio/wav/timit_denoising_separated_speech.wav" controls>
 				  Your browser does not support the <code>audio</code> element.
 				</audio>
 			</div>
