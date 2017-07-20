@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+
+	<!-- Website styles -->
+	<link rel="stylesheet" href="css/styles.css">
+	<link rel="stylesheet" href="css/main.css">
+
+	<!-- Pure -->
+	<link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous">
+
+	<!-- Bootstrap -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	<!-- JQuery -->
+	<script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous">	
+  </script>
+
+	<title>TEAM SECE</title>
+</head>
+
+<body>
+	<nav class="navbar navbar-inverse">
+	  <div class="container-fluid">
+	    <div class="navbar-header">
+	      <a class="navbar-brand" href="#">Team SECE</a>
+	    </div>
+	    <ul class="nav navbar-nav navbar-right">
+      	<li><a href="#"><span class="glyphicon glyphicon-user"></span> Logged in as: admin</a></li>
+    	</ul>
+	  </div>
+	</nav>
+
+	<div class="content">
+		<div class="attenuate">
+			<h2>Please enter audio file to be attenuated.</h2>
+			<p>The audio file must be:</p>
+			<ul>
+				<li>MP3, WAV, or AIFF audio format</li>
+				<li>File must be smaller than 50MB</li>
+			</ul>
+
+			<div>
+				<button id="atn-upload-btn" class="pure-button pure-button-primary button-xlarge">Upload</button>
+				<input id="atn-file-input" type="file" name="name" style="display: none;"/>
+				<p id="attenuate-err"></p>
+			</div>
+
+			<div id="attenuate-bar" class="progress-barr"></div>
+
+			<div>
+	      <form method="get" action="http://ernest-wong.me/midterm-demo-filtered.mp3?">
+					<button id="download-file" class="pure-button pure-button-primary button-xlarge">Convert</button>
+	      </form>
+			</div>
+
+			<div id="clips" style="display:none">
+				<h5>Original:</h5>
+				<audio id="original" src="Russian Roulette.mp3" controls>
+				  Your browser does not support the <code>audio</code> element.
+				</audio>
+				<h5>Processed:</h5>
+				<audio id="processed" src="http://ernest-wong.me/midterm-demo-filtered.mp3" controls>
+				  Your browser does not support the <code>audio</code> element.
+				</audio>
+			</div>
+
+			<div id="stats" style="display:none">
+				<h5>Algorithm 1:</h5>
+
+				<p>
+				SDR: 34 <br>
+				SIR: 34 <br>
+				SAR: 45 <br>
+				Weighted Average (bold): 32 
+				</p>
+
+				
+				<h5> Algorithm 2:</h5>
+
+				<p>
+				SDR: 34 <br>
+				SIR: 34 <br>
+				SAR: 45 <br>
+				Weighted Average (bold): 35 </p>
+
+				<h5>Algorithm 3:</h5>
+
+				<p>
+				SDR: 34 <br>
+				SIR: 34 <br>
+				SAR: 45 <br>
+				Weighted Average (bold): 37
+				</p>
+			</div>
+		</div>
+
+		<div class="train">
+			<h2>Upload a clip for training</h2>
+			<p>The audio file must be:</p>
+			<ul>
+				<li>MP3, WAV, or AIFF audio format</li>
+				<li>File must be smaller than 50MB</li>
+				<li>File must be at least 10 seconds long</li>
+			</ul>
+
+			<p>
+				For best results, please upload a recording of one of these sentences:
+			</p>
+			<ul>
+				<li>"With tenure, Suzie'd have all the more leisure for yachting, but her publications are no good."</li>
+				<li>"Shaw, those twelve beige hooks are joined if I patch a young, gooey mouth."</li>
+				<li>"Are those shy Eurasian footwear, cowboy chaps, or jolly earthmoving headgear?"</li>
+				<li>"The beige hue on the waters of the loch impressed all, including the French queen, before she heard that symphony again, just as young Arthur wanted."</li>
+			</ul>
+
+			<div>
+				<button id="train-upload-btn" class="pure-button pure-button-primary button-xlarge">Upload</button>
+				<input id="train-file-input" type="file" name="name" style="display: none;"/>
+				<p id="train-err"></p>
+			</div>
+
+			<div id="train-bar" class="progress-barr"></div>
+
+			<div class="filelist">
+				<h3>Training List:</h3>
+				<ul id="train-list">
+
+				</ul>
+			</div>
+		</div>
+	</div>
+
+
+	<!-- Website Javascript -->
+	<script src="js/SECE.js"></script>
+
+</body>
+</html>

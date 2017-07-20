@@ -1,0 +1,27 @@
+#login{
+    top:200px;
+    display: block;
+    position: relative;
+    margin: 0 auto;
+    width: 300px;
+    height: 100%;
+    padding: 15px;
+}
+
+input[type="text"],
+input[type="password"],
+button {
+    color:#111;
+    width: 100%;
+    margin-bottom: 10px;
+    height: 40px;
+    outline: 0;
+    -moz-outline-style: none;
+    border: 1px solid #bbb;
+    padding: 0 0 0 10px;
+    font-size: 14px;
+}
+
+#err{
+    color:#ff0000;
+}
